@@ -12,9 +12,26 @@ namespace ToDoList
 {
     public partial class Targets : UserControl
     {
+        int poss = 10;
         public Targets()
         {
             InitializeComponent();
+        }
+        public void addItem(string text)
+        {
+            ToDoItem item = new ToDoList.ToDoItem(text);
+            panel2.Controls.Add(item);
+            item.Top = poss;
+            poss = (item.Top + item.Height + 10);
+        }
+
+       
+        private void bunifuImageButton1_Click_1(object sender, EventArgs e)
+        {
+            //add item button
+            string tarName = textBox.Text;
+            addItem(tarName);
+            textBox.Text = "";
         }
     }
 }

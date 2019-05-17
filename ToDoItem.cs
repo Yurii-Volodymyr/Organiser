@@ -16,5 +16,10 @@ namespace ToDoList
         {
             InitializeComponent();
         }
+        public ToDoItem(string text)
+        {
+            InitializeComponent();
+            lbl.Text = text;
+        }
     }
 }
