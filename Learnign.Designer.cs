@@ -65,18 +65,18 @@
             // 
             this.textBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.textBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox.HintForeColor = System.Drawing.Color.Empty;
+            this.textBox.ForeColor = System.Drawing.Color.Transparent;
+            this.textBox.HintForeColor = System.Drawing.Color.Transparent;
             this.textBox.HintText = "";
             this.textBox.isPassword = false;
             this.textBox.LineFocusedColor = System.Drawing.Color.Purple;
             this.textBox.LineIdleColor = System.Drawing.Color.Gray;
             this.textBox.LineMouseHoverColor = System.Drawing.Color.Purple;
             this.textBox.LineThickness = 3;
-            this.textBox.Location = new System.Drawing.Point(32, 347);
+            this.textBox.Location = new System.Drawing.Point(32, 366);
             this.textBox.Margin = new System.Windows.Forms.Padding(4);
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(550, 58);
+            this.textBox.Size = new System.Drawing.Size(550, 39);
             this.textBox.TabIndex = 5;
             this.textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -103,6 +103,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "Learnign";
             this.Size = new System.Drawing.Size(650, 420);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
