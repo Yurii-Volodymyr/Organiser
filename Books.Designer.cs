@@ -62,10 +62,10 @@
             this.textBox.LineIdleColor = System.Drawing.Color.Gray;
             this.textBox.LineMouseHoverColor = System.Drawing.Color.Purple;
             this.textBox.LineThickness = 3;
-            this.textBox.Location = new System.Drawing.Point(32, 347);
+            this.textBox.Location = new System.Drawing.Point(32, 368);
             this.textBox.Margin = new System.Windows.Forms.Padding(4);
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(550, 58);
+            this.textBox.Size = new System.Drawing.Size(550, 37);
             this.textBox.TabIndex = 10;
             this.textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
