@@ -60,7 +60,7 @@ namespace ToDoList
             using (SQL)
             {
                 SQL.Open();
-                SqlCommand commandSec = new SqlCommand("insert into TargetsTab(TargetText, TargetID), values('" + insert + "', '3')", SQL);
+                SqlCommand commandSec = new SqlCommand("insert into TargetTab(TargetText, TargetID) values('" + insert + "', '3')", SQL);
                 commandSec.ExecuteNonQuery();
             }
         }

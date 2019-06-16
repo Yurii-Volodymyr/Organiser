@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -40,10 +41,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ideas1 = new ToDoList.Ideas();
-            this.targets1 = new ToDoList.Targets();
-            this.books1 = new ToDoList.Books();
+            this.time = new System.Windows.Forms.Label();
+            this.date = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.learnign1 = new ToDoList.Learnign();
+            this.books1 = new ToDoList.Books();
+            this.targets1 = new ToDoList.Targets();
+            this.ideas1 = new ToDoList.Ideas();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuGradientPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -332,19 +338,41 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // ideas1
+            // time
             // 
-            this.ideas1.Location = new System.Drawing.Point(206, 147);
-            this.ideas1.Name = "ideas1";
-            this.ideas1.Size = new System.Drawing.Size(650, 420);
-            this.ideas1.TabIndex = 1;
+            this.time.AutoSize = true;
+            this.time.Dock = System.Windows.Forms.DockStyle.Right;
+            this.time.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.time.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(71)))), ((int)(((byte)(127)))));
+            this.time.Location = new System.Drawing.Point(735, 0);
+            this.time.Name = "time";
+            this.time.Size = new System.Drawing.Size(125, 36);
+            this.time.TabIndex = 5;
+            this.time.Text = "00:00:00";
+            this.time.Click += new System.EventHandler(this.time_Click);
             // 
-            // targets1
+            // date
             // 
-            this.targets1.Location = new System.Drawing.Point(206, 147);
-            this.targets1.Name = "targets1";
-            this.targets1.Size = new System.Drawing.Size(650, 420);
-            this.targets1.TabIndex = 2;
+            this.date.AutoSize = true;
+            this.date.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.date.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(71)))), ((int)(((byte)(127)))));
+            this.date.Location = new System.Drawing.Point(651, 36);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(197, 22);
+            this.date.TabIndex = 6;
+            this.date.Text = "Friday, May 17, 2019";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // learnign1
+            // 
+            this.learnign1.ForeColor = System.Drawing.Color.Black;
+            this.learnign1.Location = new System.Drawing.Point(206, 147);
+            this.learnign1.Name = "learnign1";
+            this.learnign1.Size = new System.Drawing.Size(650, 420);
+            this.learnign1.TabIndex = 4;
             // 
             // books1
             // 
@@ -353,18 +381,41 @@
             this.books1.Size = new System.Drawing.Size(650, 420);
             this.books1.TabIndex = 3;
             // 
-            // learnign1
+            // targets1
             // 
-            this.learnign1.Location = new System.Drawing.Point(206, 147);
-            this.learnign1.Name = "learnign1";
-            this.learnign1.Size = new System.Drawing.Size(650, 420);
-            this.learnign1.TabIndex = 4;
+            this.targets1.Location = new System.Drawing.Point(206, 147);
+            this.targets1.Name = "targets1";
+            this.targets1.Size = new System.Drawing.Size(650, 420);
+            this.targets1.TabIndex = 2;
+            // 
+            // ideas1
+            // 
+            this.ideas1.Location = new System.Drawing.Point(206, 147);
+            this.ideas1.Name = "ideas1";
+            this.ideas1.Size = new System.Drawing.Size(650, 420);
+            this.ideas1.TabIndex = 1;
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // bunifuDragControl2
+            // 
+            this.bunifuDragControl2.Fixed = true;
+            this.bunifuDragControl2.Horizontal = true;
+            this.bunifuDragControl2.TargetControl = this.panel1;
+            this.bunifuDragControl2.Vertical = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 570);
+            this.Controls.Add(this.date);
+            this.Controls.Add(this.time);
             this.Controls.Add(this.learnign1);
             this.Controls.Add(this.books1);
             this.Controls.Add(this.targets1);
@@ -374,12 +425,14 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -400,6 +453,11 @@
         private Targets targets1;
         private Books books1;
         private Learnign learnign1;
+        private System.Windows.Forms.Label time;
+        private System.Windows.Forms.Label date;
+        private System.Windows.Forms.Timer timer1;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
     }
 }
 

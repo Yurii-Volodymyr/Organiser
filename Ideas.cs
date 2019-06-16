@@ -55,14 +55,17 @@ namespace ToDoList
                 }
             }
         }
-
+        /// <summary>
+        /// Insert into datebase
+        /// </summary>
+        /// <param name="insert"></param>
         public void addTargets(string insert)
         {
             SqlConnection SQL = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Targets;Integrated Security=True;Pooling=False");
             using (SQL)
             {
                 SQL.Open();
-                SqlCommand commandSec = new SqlCommand("insert into TargetsTab(TargetText, TargetID), values('" + insert + "', '4')", SQL);
+                SqlCommand commandSec = new SqlCommand("insert into TargetTab (TargetText, TargetID) values('" + insert + "', '4')", SQL);
                 commandSec.ExecuteNonQuery();
             }
         }
